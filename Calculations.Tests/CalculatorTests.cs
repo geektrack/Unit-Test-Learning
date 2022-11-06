@@ -22,5 +22,34 @@ namespace Calculations.Tests
             //Assert
             Assert.Equal(expectedResult, originalResult);
         }
+
+        [Fact]
+        public void AddDouble_GivenTwoDoubleValues_ReturnsDouble()
+        {
+            //Arrange
+            Calculator calculator = new Calculator();
+            double expectedResult = 3.914;
+            //Act
+            var originalResult = calculator.AddDouble(1.35, 2.564);
+
+            //Assert
+            Assert.Equal(expectedResult, originalResult);
+        }  
+        
+        [Fact]
+        public void AddDouble_GivenTwoDoubleValues_ReturnsDoubleWithPrecision()
+        {
+            //Arrange
+            Calculator calculator = new Calculator();
+            //double expectedResult = 3.914;
+
+            //Act
+            var originalResult = calculator.AddDouble(1.35, 2.564);
+
+            //Assert
+            Assert.Equal(3.9, originalResult,1); //checks precision upto 1 decimal point
+            Assert.Equal(3.91, originalResult,2); //checks precision upto 2 decimal point
+            Assert.Equal(3.9, originalResult,0); //checks precision upto 0 decimal point
+        }
     }
 }

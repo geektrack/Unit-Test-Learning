@@ -10,5 +10,7 @@ namespace Calculations
     {
         public int Add(int a,int b)
             { return a + b; }
+
+        public double AddDouble(double a, double b) => a + b;
     }
 }
